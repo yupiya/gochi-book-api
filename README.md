@@ -29,6 +29,14 @@ Untuk mendapatkan daftar semua buku, kirimkan permintaan **GET** ke `/books`.
 Invoke-RestMethod http://localhost:8080/books
 ```
 
+### Menampilkan Data Buku Berdasarkan ID
+
+Mendapatkan detail buku tertentu dengan menambahkan ID buku ke URL (Contoh ID=1).
+
+```powershell
+Invoke-RestMethod http://localhost:8080/books/1
+```
+
 ### Menambah Data Buku
 Dapat menambahkan buku baru dengan mengirimkan permintaan **POST** ke `/books`.
 
