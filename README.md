@@ -5,7 +5,7 @@ Data disimpan secara in-memory menggunakan slice.
 
 ---
 
-## Menjalankan Aplikasi
+## Menjalankan Aplikasi/Website
 
 ```bash
 go run main.go
@@ -51,3 +51,29 @@ Invoke-RestMethod -Uri http://localhost:8080/books `
   -Method POST `
   -Body $body `
   -ContentType "application/json"
+```
+
+### Mengubah Data Buku Berdasarkan ID (Update)
+
+Untuk memperbarui data buku yang sudah ada, kirimkan permintaan **PUT** ke `/books/{id}`.
+
+```powershell
+$body = @{
+  title = "Tereliye"
+  author = "Yupiyapiyay"
+  published_year=2024
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri http://localhost:8080/books/3 `
+  -Method PUT `
+  -Body $body `
+  -ContentType "application/json"
+```
+
+### Menghapus Data Buku Berdasarkan ID
+
+Untuk menghapus buku, kirimkan permintaan **DELETE** ke `/books/{id}`.
+
+```powershell
+Invoke-RestMethod -Uri http://localhost:8080/books/2 -Method DELETE
+```
