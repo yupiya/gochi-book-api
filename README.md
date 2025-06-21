@@ -20,6 +20,15 @@ go run main.go
 | DELETE | /books/{id} | Menghapus buku berdasarkan ID     |
 
 ## Request via PowerShell
+
+### Menampilkan Semua Data Buku
+
+Untuk mendapatkan daftar semua buku, kirimkan permintaan **GET** ke `/books`.
+
+```powershell
+Invoke-RestMethod http://localhost:8080/books
+```
+
 ### Menambah Data Buku
 Dapat menambahkan buku baru dengan mengirimkan permintaan **POST** ke `/books`.
 
