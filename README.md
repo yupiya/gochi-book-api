@@ -20,6 +20,7 @@ go run main.go
 | DELETE | /books/{id} | Menghapus buku berdasarkan ID     |
 
 ## Request via PowerShell
+```Powershell
 $body = @{
   title = "Tere"
   author = "Yupi"
@@ -30,3 +31,4 @@ Invoke-RestMethod -Uri http://localhost:8080/books `
   -Method POST `
   -Body $body `
   -ContentType "application/json"
+```
