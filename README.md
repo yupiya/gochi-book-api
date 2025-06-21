@@ -20,8 +20,11 @@ go run main.go
 | DELETE | /books/{id} | Menghapus buku berdasarkan ID     |
 
 ## Request via PowerShell
-```Powershell
-$body = @{
+### Menambah Data Buku
+Dapat menambahkan buku baru dengan mengirimkan permintaan **POST** ke `/books`.
+
+```powershell
+$body = @@{
   title = "Tere"
   author = "Yupi"
   published_year = 2025
@@ -31,4 +34,3 @@ Invoke-RestMethod -Uri http://localhost:8080/books `
   -Method POST `
   -Body $body `
   -ContentType "application/json"
-```
