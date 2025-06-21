@@ -1,4 +1,4 @@
-# 📚 Gochi Book API
+# Gochi Book API
 
 Gochi Book API adalah aplikasi RESTful API sederhana untuk manajemen data buku menggunakan Go dan framework [Chi v5](https://github.com/go-chi/chi).  
 Data disimpan secara in-memory menggunakan slice.
@@ -18,3 +18,15 @@ go run main.go
 | POST   | /books      | Menambahkan buku baru             |
 | PUT    | /books/{id} | Mengubah data buku berdasarkan ID |
 | DELETE | /books/{id} | Menghapus buku berdasarkan ID     |
+
+## Request via PowerShell
+$body = @{
+  title = "Tere"
+  author = "Yupi"
+  published_year = 2025
+} | ConvertTo-Json -Depth 2
+
+Invoke-RestMethod -Uri http://localhost:8080/books `
+  -Method POST `
+  -Body $body `
+  -ContentType "application/json"
