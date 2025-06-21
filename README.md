@@ -24,10 +24,10 @@ go run main.go
 Dapat menambahkan buku baru dengan mengirimkan permintaan **POST** ke `/books`.
 
 ```powershell
-$body = @@{
+$body = @{
   title = "Tere"
   author = "Yupi"
-  published_year = 2025
+  published_year=2025
 } | ConvertTo-Json -Depth 2
 
 Invoke-RestMethod -Uri http://localhost:8080/books `
